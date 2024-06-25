@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: payment-test-task
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/payment_test_task
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+
+security:
+  jwt:
+    secret-key: ZTZjNGQxOTUyMWVlNTA0MThjMTI4ZGYyYzU5YjIzYzUxMzA0Yjc3OTI2MzI3ZDJlMjdlOTE5YTZiNjhkZTA0YTQwOWY1YTUxOWY4NDM2NWM5ZmEzZmU1MDA4NTBhNWJjYjNlY2QyODVmMzdlYjU4YmMyYzc1Y2I4MTI1ZjY3OTA
+    expire-length: 86400000 # 1 day in milliseconds
+
+logging:
+  level:
+    org.springframework.security: DEBUG
