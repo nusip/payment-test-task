@@ -1,6 +1,6 @@
 package kz.maks.paymenttesttask.controller
 
-import kz.astonline.myhealth.auth.AuthUser
+import kz.maks.paymenttesttask.auth.AuthUser
 import kz.maks.paymenttesttask.auth.IsAuthenticated
 import kz.maks.paymenttesttask.dto.ErrorResponse
 import kz.maks.paymenttesttask.dto.PurchaseRequest
