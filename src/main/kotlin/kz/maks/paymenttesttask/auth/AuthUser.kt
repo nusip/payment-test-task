@@ -1,4 +1,4 @@
-package kz.astonline.myhealth.auth
+package kz.maks.paymenttesttask.auth
 
 import org.springframework.security.core.userdetails.User
 

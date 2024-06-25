@@ -1,6 +1,6 @@
 package kz.maks.paymenttesttask.auth.jwt
 
-import kz.astonline.myhealth.auth.AuthUser
+import kz.maks.paymenttesttask.auth.AuthUser
 import kz.maks.paymenttesttask.model.User
 import org.springframework.security.core.Authentication
 

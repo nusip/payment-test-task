@@ -18,10 +18,10 @@ import org.springframework.stereotype.Component
 class JwtTokenAuthProvider(
     private val userRepository: UserRepository,
 
-    @Value("\${security.jwt.token.secret-key}")
+    @Value("\${security.jwt.secret-key}")
     private val secretKey: String,
 
-    @Value("\${security.jwt.token.expire-length}")
+    @Value("\${security.jwt.expire-length}")
     private val validityInSeconds: Long
 
 ) : JwtAuthProvider {
