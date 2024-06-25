@@ -1,0 +1,27 @@
+version: '2.2'
+services:
+  postgres:
+    image: postgres:11.3
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: payment_test_task
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d payment_test_task"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  payment_test_task:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/vox
+    depends_on:
+      postgres:
+        condition: service_healthy
