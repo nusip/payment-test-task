@@ -67,14 +67,13 @@ tasks.bootJar {
     archiveFileName.set("app.jar")
 }
 
-//kotlin {
-//    jvmToolchain(11)
-//}
-
 tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "11"
+    kotlinOptions {
+        freeCompilerArgs = listOf("-Xjsr305=strict")
+        jvmTarget = "11"
+    }
 }
 
 application {
-    mainClass.set("MainKt")
+    mainClass.set("kz.maks.paymenttesttask.AppKt")
 }
